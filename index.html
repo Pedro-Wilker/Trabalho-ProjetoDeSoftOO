@@ -94,7 +94,7 @@
           >
             <div class="logout">
               <a
-                class="btn btn-primary text-uppercase"
+                class="btn btn-secondary text-uppercase"
                 href="login.html"
                 role="button"
                 >sair</a
@@ -103,21 +103,26 @@
           </div>
         </div>
         <hr />
-        <!--Lista -->
-        <div class="content">
-          <table class="users">
-            <tr>
-              <td class="table-id">n°</td>
-              <td class="table-icon">Ícone</td>
-              <td class="table-name">Nome</td>
-              <td class="table-email">E-mail</td>
-              <td class="table-phone">Telefone</td>
-              <td class="table-date">Criado em</td>
-              <td class="table-admin">Admin</td>
-              <td class="table-actions">
-                <span class="material-icons-sharp add">add</span>
-              </td>
-            </tr>
+
+        <!--Lista de usuarios-->
+        <div class="content" style="margin-left: 15%">
+          <table
+            class="users table table-striped table-dark table-sm table-responsive-sm"
+          >
+            <thead>
+              <tr>
+                <td scope="col" class="table-id">n°</td>
+                <td scope="col" class="table-icon">Ícone</td>
+                <td scope="col" class="table-name">Nome</td>
+                <td scope="col" class="table-email">E-mail</td>
+                <td scope="col" class="table-phone">Telefone</td>
+                <td scope="col" class="table-date">Criado em</td>
+                <td scope="col" class="table-admin">Admin</td>
+                <td scope="col" class="table-actions">
+                  <span class="material-icons-sharp add">add</span>
+                </td>
+              </tr>
+            </thead>
           </table>
         </div>
         <div class="form form-add">
@@ -205,7 +210,24 @@
       </div>
     </section>
   </body>
-  <!--   <script src="./js/models/User.js"></script>
+  <!-- PROJETO -->
+  <script src="./js/models/User.js"></script>
   <script src="./js/controllers/UserController.js"></script>
-  <script src="./js/app.js"></script> -->
+  <script src="./js/app.js"></script>
+  <!-- Script bootstrap  -->
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"
+  ></script>
 </html>
