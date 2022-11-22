@@ -61,11 +61,15 @@
         </div>
       </nav>
     </header>
+    <hr />
     <section id="home">
       <!--Barra lateral-->
-      <div class="container text-center text-monospace">
+      <div
+        class="container text-center text-monospace md-4"
+        style="padding-right: 25px"
+      >
         <div
-          class="menu container position-relative rounded float-left"
+          class="menu container position-relative rounded float-left bg-dark text-white"
           style="width: 150px"
         >
           <img
@@ -88,10 +92,7 @@
             Administrador
           </span>
           <hr />
-          <div
-            class="logout-container text-center"
-            style="position: absolute; bottom: 2%; left: 30%"
-          >
+          <div class="logout-container text-center" style="left: 30%">
             <div class="logout">
               <a
                 class="btn btn-secondary text-uppercase"
@@ -102,9 +103,83 @@
             </div>
           </div>
         </div>
-        <hr />
 
-        <!--Lista de usuarios-->
+        <div class="container bg-dark.bg-gradient">
+          <div class="row">
+            <div class="col text-uppercase" style="font-weight: 1000">
+              <h1>Agendamento</h1>
+            </div>
+          </div>
+          <div class="row my-2 mx-1 py-2 border rounded">
+            <div class="col-12">
+              <form action="">
+                <div class="row">
+                  <div class="col-12">
+                    <h2>Novo Evento</h2>
+                  </div>
+                </div>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label for="nomeEvento" class="form-label"
+                      >Nome do Evento</label
+                    >
+                    <input
+                      type="text"
+                      name="nomeEvento"
+                      id="nomeEvento"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label for="dataEvento" class="form-label"
+                      >Data do Evento</label
+                    >
+                    <input
+                      type="datetime-local"
+                      name="dataEvento"
+                      id="dataEvento"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="col-6 mt-2">
+                    <button type="button" class="btn btn-danger w-100">
+                      Cancelar
+                    </button>
+                  </div>
+                  <div class="col-6 mt-2">
+                    <button type="submit" class="btn btn-primary w-100">
+                      Salvar
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col" style="margin-left: 147px">
+              <h2>Eventos</h2>
+            </div>
+            <div class="col-auto">
+              <button type="button" class="btn btn-success">Novo Evento</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <table class="table">
+                <thead>
+                  <th scope="col">Data</th>
+                  <th scope="col">Nivel de Urgência</th>
+                  <th scope="col">Sobre</th>
+                </thead>
+                <tbody>
+                  <td colspan="3">Reuniões marcadas</td>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!--  <!--Lista de usuarios
         <div class="content" style="margin-left: 220px">
           <table class="users table table-lg table-dark">
             <thead>
@@ -122,7 +197,7 @@
               </tr>
             </thead>
           </table>
-        </div>
+        </div> 
         <div class="form form-add">
           <form class="register">
             <div class="form-container">
@@ -205,8 +280,10 @@
             </div>
           </form>
         </div>
+        -->
       </div>
     </section>
+    <hr />
   </body>
   <!-- PROJETO -->
   <script src="./js/models/User.js"></script>

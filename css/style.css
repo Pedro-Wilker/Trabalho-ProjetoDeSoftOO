@@ -4,8 +4,8 @@ body {
 
 div.menu {
   justify-content: center;
-  box-shadow: 1px 0px 2px 0px black;
-  height: 100vh;
+  box-shadow: 3px 0px 2px 0px black;
+  height: 490px;
   background-image: linear-gradient(to right, #ffffff00, #ffffff60);
 }
 .profile-name {
@@ -22,19 +22,7 @@ div.menu {
   font-weight: 700;
 }
 
-/* 
-
-
-
-div.menu div.logout-container div.logout {
-  cursor: pointer;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
- */
-.users span.delete-btn {
+.delete-btn {
   color: red;
 }
 
