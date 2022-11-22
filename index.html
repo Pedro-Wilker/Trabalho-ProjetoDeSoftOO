@@ -104,13 +104,16 @@
           </div>
         </div>
 
-        <div class="container bg-dark.bg-gradient">
+        <div class="container">
           <div class="row">
             <div class="col text-uppercase" style="font-weight: 1000">
               <h1>Agendamento</h1>
             </div>
           </div>
-          <div class="row my-2 mx-1 py-2 border rounded">
+          <div
+            id="formEventos"
+            class="row my-2 mx-1 py-2 border rounded d-none"
+          >
             <div class="col-12">
               <form action="">
                 <div class="row">
@@ -142,7 +145,11 @@
                     />
                   </div>
                   <div class="col-6 mt-2">
-                    <button type="button" class="btn btn-danger w-100">
+                    <button
+                      type="button"
+                      class="btn btn-danger w-100"
+                      onclick="cancelarEvento()"
+                    >
                       Cancelar
                     </button>
                   </div>
@@ -160,7 +167,13 @@
               <h2>Eventos</h2>
             </div>
             <div class="col-auto">
-              <button type="button" class="btn btn-success">Novo Evento</button>
+              <button
+                type="button"
+                class="btn btn-success"
+                onclick="novoEvento()"
+              >
+                Novo Evento
+              </button>
             </div>
           </div>
           <div class="row">
@@ -286,9 +299,9 @@
     <hr />
   </body>
   <!-- PROJETO -->
-  <script src="./js/models/User.js"></script>
-  <script src="./js/controllers/UserController.js"></script>
-  <script src="./js/app.js"></script>
+  <!--   <script src="./js/models/User.js"></script>
+  <script src="./js/controllers/UserController.js"></script> -->
+  <!--   <script src="./js/app.js"></script> -->
   <!-- Script bootstrap  -->
   <script
     src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -305,4 +318,5 @@
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"
   ></script>
+  <script src="js/agenda.js"></script>
 </html>
