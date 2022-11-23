@@ -8,21 +8,20 @@
   );
 }
 
-div.content {
+.content {
   margin: auto;
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: Nunito, sans-serif;
 }
 
-img.logo {
+.logo {
   width: 150px;
 }
 
-form.login input {
+.login input {
   width: 350px;
   height: 35px;
   border: 0;
@@ -31,17 +30,17 @@ form.login input {
   font-size: 22px;
 }
 
-form.login input:focus {
+.login input:focus {
   outline: 0;
 }
 
-form.login {
+.login {
   width: 100%;
 }
 
-button.login-btn {
-  width: 80px;
-  height: 35px;
+.login-btn {
+  width: 90px;
+  height: 40px;
   background: var(--color-gradient);
   font-size: 18px;
   cursor: pointer;
@@ -50,6 +49,6 @@ button.login-btn {
   color: white;
 }
 
-button.login-btn:hover {
+.login-btn:hover {
   filter: brightness(0.9);
 }
