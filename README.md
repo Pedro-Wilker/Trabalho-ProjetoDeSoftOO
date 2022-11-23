@@ -28,9 +28,9 @@ cal onde será realizado o login.
    <hr/>
        <li>
     <h3>Sistema de agendamento</h3>
-        <p>=> Antes do botão "novo evento" </p>
+        <h5>=> Antes do botão "novo evento" </h5>
         <img width="700px"  src="https://user-images.githubusercontent.com/81252209/203434842-d69114e9-c2bf-403a-8a27-e37378902093.png"/>
-         <p>=> Após o botão "novo evento" </p>
+         <h5>=> Após o botão "novo evento" </h5>
         <img width="700px"  src="https://user-images.githubusercontent.com/81252209/203434778-6ffa6e73-9f57-4b9d-9966-e2e1f4604336.png"/> <br/>
      </li>
    <hr/>
