@@ -1,4 +1,4 @@
-function novoEvento() {
+function mostrarNovoEvento() {
   var novoEvento = document.getElementById("formEventos");
   novoEvento.classList.remove("d-none");
 }
