@@ -5,7 +5,7 @@ body {
 div.menu {
   justify-content: center;
   box-shadow: 3px 0px 2px 0px black;
-  height: 490px;
+  height: 567px;
   background-image: linear-gradient(to right, #ffffff00, #ffffff60);
 }
 .profile-name {
