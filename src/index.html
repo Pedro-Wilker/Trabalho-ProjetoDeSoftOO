@@ -115,7 +115,7 @@
             class="row my-2 mx-1 py-2 border rounded d-none"
           >
             <div class="col-12">
-              <form action="">
+              <form action="" id="formNewEvent">
                 <div class="row">
                   <div class="col-12">
                     <h2>Novo Evento</h2>
@@ -129,12 +129,23 @@
                     <input
                       type="text"
                       name="nomeEvento"
-                      id="nomeEvento"
+                      id="reuniaoNome"
                       class="form-control"
                     />
                   </div>
                   <div class="col-12">
-                    <label for="dataEvento" class="form-label"
+                    <label for="localEvento" class="form-label mt-2"
+                      >Local do Evento</label
+                    >
+                    <input
+                      type="text"
+                      name="localEvento"
+                      id="localEvento"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label for="dataEvento" class="form-label mt-2"
                       >Data do Evento</label
                     >
                     <input
