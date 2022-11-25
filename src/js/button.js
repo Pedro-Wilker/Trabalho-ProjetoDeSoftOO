@@ -5,41 +5,101 @@ var formEvento = document.getElementById("formNewEvent");
 var inputNomeEvento = document.getElementById("reuniaoNome");
 var inputDataEvento = document.getElementById("dataEvento");
 var inputLocalEvento = document.getElementById("localEvento");
+var messagemErro = document.getElementById("messagemErro");
 
 function mostrarNovoEvento() {
   novoEvento.classList.remove("d-none");
 }
 
+function limparNovoEvento() {
+  inputNomeEvento.value = "";
+  inputDataEvento.value = "";
+  inputLocalEvento.value = "";
+  inputNomeEvento.classList.remove("is-invalid");
+  inputDataEvento.classList.remove("is-invalid");
+  inputLocalEvento.classList.remove("is-invalid");
+  messagemErro.classList.add("d-none");
+  messagemErro.innerText = "";
+}
+
 function cancelarEvento() {
   var cancelarEvento = document.getElementById("formEventos");
   cancelarEvento.classList.add("d-none");
+  limparNovoEvento();
 }
 
 function novoEventoValido(nomeEvento, dataEvento, localEvento) {
+  var validacaoOK = true;
+  var erro = "";
+  /*Validação dos 3*/
+  if (
+    nomeEvento.trim().length === 0 &&
+    localEvento.trim().length === 0 &&
+    isNaN(Date.parse(dataEvento))
+  ) {
+    if (erro.length > 0) {
+      erro += "\n";
+    }
+    erro += "Nada foi inserido";
+    inputNomeEvento.classList.add("is-invalid");
+    inputDataEvento.classList.add("is-invalid");
+    inputLocalEvento.classList.add("is-invalid");
+    validacaoOK = false;
+  } else {
+    inputNomeEvento.classList.remove("is-invalid");
+    inputDataEvento.classList.remove("is-invalid");
+    inputLocalEvento.classList.remove("is-invalid");
+  }
+
   /* Validação do evento */
   if (nomeEvento.trim().length === 0) {
-    alert("Nome do evento invalido");
-    return false;
+    inputNomeEvento.classList.add("is-invalid");
+    if (erro.length > 0) {
+      erro += "\n";
+    }
+    erro += "Nome invalido";
+    validacaoOK = false;
+  } else {
+    inputNomeEvento.classList.remove("is-invalid");
   }
 
   /* Validação da hora */
   var timestampEvento = Date.parse(nomeEvento);
-  if (isNaN(Date.parse(dataEvento))) {
-    alert("Data invalida");
-    return false;
-  }
   var timestampAtual = new Date().getTime();
-  if (timestampEvento <= timestampAtual) {
-    alert("Não é possivel marcar eventos para o mesmo dia ou dias no passado ");
-    return false;
+
+  if (isNaN(Date.parse(dataEvento)) || timestampEvento <= timestampAtual) {
+    if (erro.length > 0) {
+      erro += "\n";
+    }
+    erro +=
+      "A data invalida, a data precisa ser agendada pelo menos 1 dia após o dia atual.";
+    inputDataEvento.classList.add("is-invalid");
+    validacaoOK = false;
+  } else {
+    inputDataEvento.classList.remove("is-invalid");
   }
 
   /* Validação do local */
   if (localEvento.trim().length === 0) {
-    alert("Nome do evento invalido");
-    return false;
+    if (erro.length > 0) {
+      erro += "\n";
+    }
+    erro += "Local invalido";
+    inputLocalEvento.classList.add("is-invalid");
+    validacaoOK = false;
+  } else {
+    inputLocalEvento.classList.remove("is-invalid");
   }
-  return true;
+
+  /* Menssagem de erro */
+
+  if (!validacaoOK) {
+    messagemErro.innerText = erro;
+    messagemErro.classList.remove("d-none");
+  } else {
+    messagemErro.classList.add("d-none");
+  }
+  return validacaoOK;
 }
 
 function salvarNovoEvento(event) {
