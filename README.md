@@ -46,7 +46,7 @@ cal onde será realizado o login.
    </hr> 
        <li>
        <h3>Tela de login</h3>
-       <img src="https://user-images.githubusercontent.com/81252209/203883960-52f09169-8da9-45b4-bab8-42943e29f283.png"/> <br/>
+       <img width="600px" src="https://user-images.githubusercontent.com/81252209/203883960-52f09169-8da9-45b4-bab8-42943e29f283.png"/> <br/>
      </li>
     
   </ul>
