@@ -6,6 +6,53 @@ var inputNomeEvento = document.getElementById("reuniaoNome");
 var inputDataEvento = document.getElementById("dataEvento");
 var inputLocalEvento = document.getElementById("localEvento");
 var messagemErro = document.getElementById("messagemErro");
+var tabelaEventos = document.getElementById("tabelaEventos");
+
+var listaEventos = [];
+
+listaEventos.push(eventoExemplo);
+
+function removerEvento(event) {
+  var position = event.target.getAttribute("data-evento");
+  listaEventos.splice(position, 1);
+  console.log("removendo evento " + position);
+  atualizarTabelaEventos();
+}
+
+function atualizarTabelaEventos() {
+  console.log("Chamado atualizar Tabela Eventos");
+  if (listaEventos.length === 0) {
+    tabelaEventos.innerHTML =
+      '<tr><td colspan="3">Nenhuma Reunião marcada</td></tr>';
+    return;
+  }
+  tabelaEventos.innerHTML = "";
+
+  for (var i = 0; i < listaEventos.length; i++) {
+    var evento = listaEventos[i];
+    var linha = document.createElement("tr");
+    var celulaNome = document.createElement("td");
+    var celulaData = document.createElement("td");
+    var celulaLocal = document.createElement("td");
+    var celulaAcoes = document.createElement("td");
+    var botaoExcluir = document.createElement("button");
+    botaoExcluir.setAttribute("data-evento", i);
+    botaoExcluir.classList.add("btn");
+    botaoExcluir.classList.add("btn-danger");
+    botaoExcluir.classList.add("btn-sm");
+    botaoExcluir.innerText = "Remover";
+    botaoExcluir.addEventListener("click", removerEvento);
+    celulaAcoes.appendChild(botaoExcluir);
+    celulaNome.innerText = evento.nome;
+    celulaLocal.innerText = evento.local;
+    celulaData.innerText = evento.data;
+    linha.appendChild(celulaNome);
+    linha.appendChild(celulaLocal);
+    linha.appendChild(celulaData);
+    linha.appendChild(celulaAcoes);
+    tabelaEventos.appendChild(linha);
+  }
+}
 
 function mostrarNovoEvento() {
   novoEvento.classList.remove("d-none");
@@ -25,6 +72,11 @@ function limparNovoEvento() {
 function cancelarEvento() {
   var cancelarEvento = document.getElementById("formEventos");
   cancelarEvento.classList.add("d-none");
+  limparNovoEvento();
+}
+
+function ocultarNovoEvento() {
+  novoEvento.classList.add("d-none");
   limparNovoEvento();
 }
 
@@ -110,6 +162,13 @@ function salvarNovoEvento(event) {
 
   if (novoEventoValido(nomeEvento, dataEvento, localEvento) == true) {
     console.log("Evento Valido");
+    listaEventos.push({
+      nome: nomeEvento,
+      local: localEvento,
+      data: new Date(dataEvento),
+    });
+    atualizarTabelaEventos();
+    ocultarNovoEvento();
   } else {
     console.log("Evento não é valido");
   }
@@ -118,3 +177,4 @@ function salvarNovoEvento(event) {
 buttonNovoEvento.addEventListener("click", mostrarNovoEvento);
 buttonCancelar.addEventListener("click", cancelarEvento);
 formEvento.addEventListener("submit", salvarNovoEvento);
+window.addEventListener("load", atualizarTabelaEventos);
