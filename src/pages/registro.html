@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./images/logo.png  " type="image/x-icon" />
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/login.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Material+Icons"
@@ -30,7 +30,7 @@
     <title>Login</title>
   </head>
   <body>
-    <form class="login" action="./pages/index.html">
+    <form class="login">
       <div
         class="container"
         style="margin-top: 75px; font-family: Bradley Hand, cursive"
@@ -39,13 +39,14 @@
         class="content bg-light rounded-3 border shadow p-3 mb-5 bg-body rounded"
         style="width: 400px; height: 450px"
       >
-        <img class="logo mb-4" src="./images/logo.png" alt="Logo" />
+        <img class="logo mb-4" src="../images/logo.png" alt="Logo" />
         <span class="feedback"></span>
         <input type="text" name="email" placeholder="E-mail" />
+        <input type="text" name="name" placeholder="Name" />
         <input type="password" name="password" placeholder="Senha" />
-        <button class="login-btn" id="buttonLogin">Entrar</button>
+        <button class="login-btn">Entrar</button>
         <p class="text-center mt-2">
-          Não possui cadastro? <a href="./pages/registro.html">clique aqui</a>
+          Já possui cadastro? <a href="../login.html">clique aqui</a>
         </p>
       </div>
     </form>
@@ -65,5 +66,4 @@
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"
   ></script>
-  <script src="./js/login.js"></script>
 </html>

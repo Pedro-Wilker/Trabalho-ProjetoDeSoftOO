@@ -10,8 +10,6 @@ var tabelaEventos = document.getElementById("tabelaEventos");
 
 var listaEventos = [];
 
-listaEventos.push(eventoExemplo);
-
 function removerEvento(event) {
   var position = event.target.getAttribute("data-evento");
   listaEventos.splice(position, 1);
